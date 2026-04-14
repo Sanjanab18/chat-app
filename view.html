@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Messages</title>
+</head>
+<body>
+
+<h2>View Messages</h2>
+
+<p id="display"></p>
+
+<br>
+<a href="index.html">Back to Send</a>
+
+<script>
+let msg = localStorage.getItem("chatMessage");
+
+if(msg) {
+    document.getElementById("display").innerText = msg;
+} else {
+    document.getElementById("display").innerText = "No messages found";
+}
+</script>
+
+</body>
+</html>

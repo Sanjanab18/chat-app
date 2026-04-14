@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat App V2</title>
+</head>
+<body>
+
+<h2>Send Message (V2)</h2>
+
+<input type="text" id="message" placeholder="Enter your message">
+<button onclick="sendMessage()">Send</button>
+
+<br><br>
+<a href="view.html">Go to View Messages</a>
+
+<p id="status"></p>
+
+<script>
+function sendMessage() {
+    let msg = document.getElementById("message").value;
+
+    if(msg === "") {
+        document.getElementById("status").innerText = "Enter a message!";
+        return;
+    }
+
+    localStorage.setItem("chatMessage", msg);
+    document.getElementById("status").innerText = "Message Sent!";
+}
+</script>
+
+</body>
+</html>
