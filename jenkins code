@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+
+        stage('Clone from GitHub') {
+            steps {
+                git branch: 'v1', url: 'https://github.com/Sanjanab18/chat-app.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                echo 'Building Chat App v1...'
+            }
+        }
+
+    }
+}
