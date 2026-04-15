@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Messages</title>
+</head>
+<body>
+
+<h2>View Messages (V3)</h2>
+
+<p id="display"></p>
+
+<button onclick="deleteMessage()">Delete Message</button>
+
+<br><br>
+<a href="index.html">Back to Send</a>
+
+<script>
+function loadMessage() {
+    let msg = localStorage.getItem("chatMessage");
+
+    if(msg) {
+        document.getElementById("display").innerText = msg;
+    } else {
+        document.getElementById("display").innerText = "No messages found";
+    }
+}
+
+function deleteMessage() {
+    localStorage.removeItem("chatMessage");
+    document.getElementById("display").innerText = "Message Deleted!";
+}
+
+loadMessage();
+</script>
+
+</body>
+</html>
